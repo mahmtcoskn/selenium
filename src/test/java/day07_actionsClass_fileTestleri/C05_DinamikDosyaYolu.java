@@ -1,0 +1,21 @@
+package day07_actionsClass_fileTestleri;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class C05_DinamikDosyaYolu {
+
+    @Test
+    public void test01(){
+
+        // Masaustumuzdeki dosyanın bulumdugunu test edin
+
+        String dosyaYolu = System.getProperty("user.home") + "/Desktop/sozlesme.pdf";
+
+        Assert.assertTrue(Files.exists(Paths.get(dosyaYolu)));
+
+    }
+}
