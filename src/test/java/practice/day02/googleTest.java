@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.FilterOutputStream;
 import java.time.Duration;
+import java.util.List;
 
 public class googleTest {
 
@@ -52,15 +53,12 @@ public class googleTest {
 
         // Para birimlerinin karsilastirmasini alir
         WebElement karsilastirilanParaBirimi=driver.findElement(By.xpath("//span[@class='DFlfde SwHCTb']"));
-        //System.out.println(karsilastirilanParaBirimi.getText());
+        System.out.println(karsilastirilanParaBirimi.getText());
         String paraninDegeri=karsilastirilanParaBirimi.getText();
-        System.out.println(paraninDegeri.replace(",","."));
-        Double a = Double.parseDouble(paraninDegeri);
-        System.out.println(a);
 
 
         //Karsilastirilacak olan para biriminin 1.5 den kucuk oldugu test edilir
-        Assert.assertTrue(a<1.5);
+        Assert.assertTrue(Double.parseDouble(paraninDegeri)<1.5);
 
 
     }
